@@ -3,16 +3,26 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="index.css">
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Registration</h1>
+		<div class="back">
+		<a href="/index.html">Registration</a>
+		<a href="/login.html">Login | </a>
 		<form id="reg-form">
+			<h2>Registration</h2>
 			<input type="text" autocomplete="off" id="username" placeholder="Username" />
 			<input type="password" autocomplete="off" id="password" placeholder="Password" />
-			<input type="submit" value="Submit Form" />
+			
+			<input type="submit"  value="Submit Form" />
+		
 		</form>
-
+		<span class="bottom">
+			Forgot Password?
+			<a href="/change-password.html">Change Password</a>
+		</span>
+		</div>
 		<script>
 			const form = document.getElementById('reg-form')
 			form.addEventListener('submit', registerUser)
@@ -35,6 +45,7 @@
 
 				if (result.status === 'ok') {
 					// everythign went fine
+					window.location.href='/login.html'
 					alert('Success')
 				} else {
 					alert(result.error)
